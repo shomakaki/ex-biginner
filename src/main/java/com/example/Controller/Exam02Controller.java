@@ -18,7 +18,18 @@ public class Exam02Controller {
 		return "exam02";
 	}
 	
-//	RequestMapping("/addResult")
-//	public String addResult() {
-//	}
+	@RequestMapping("/addResult")
+	public String addResult(Integer num1,Integer num2,Integer answer) {
+		session.setAttribute("num1", num1);
+		session.setAttribute("num2", num2);
+		session.setAttribute("answer", num1+num2);
+		
+		return  "exam02-result";
+		
+		
+	}
+	@RequestMapping("/toResult")
+	public String toResult() {
+		return "exam02-result2";
+	}
 }
